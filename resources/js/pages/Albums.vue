@@ -3,15 +3,17 @@
     <div class="app-container__main">
       <Header></Header>
       <div class="app-container__page">
-        <h1>Albums</h1>
-        <div v-if="isLoading">Loading...</div>
-
-        <div class="album-list">
-            <router-link v-for="album in albums" :to="generateAlbumURL(album.id)">
-                <SVGIcon name="cd" />
-                <p class="txt-album-name">{{ album.title }}</p>
-                <p class="txt-artist-name">{{ album.artist_name }}</p>                
-            </router-link>
+        <div v-if="isLoading" class="loading-spinner"><v-progress-circular color="#3686FF" indeterminate></v-progress-circular></div>
+        <div v-if="!isLoading">
+          <h1>Albums</h1>        
+          <div class="album-list">
+              <router-link v-for="album in albums" :to="generateAlbumURL(album.id)">
+                  <SVGIcon name="cd" />
+                  <p class="txt-album-name">{{ album.title }}</p>
+                  <p class="txt-artist-name">{{ album.artist_name }}</p>     
+                  <p class="txt-release-year">{{ album.release_year }}</p>
+              </router-link>
+          </div>
         </div>
       </div>
     </div>

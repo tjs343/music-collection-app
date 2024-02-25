@@ -44,7 +44,7 @@ class AlbumController extends Controller
 
         $albumsWithCustomField = $albums->map(function ($album) use ($data) {
 
-            $album['artist_name'] = $this->getNameById($data['json'], 7);
+            $album['artist_name'] = $this->getNameById($data['json'], $album['artist_id']);
 
             return $album;
         });

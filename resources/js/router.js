@@ -13,6 +13,10 @@ const routes = [
         path: "/albums",
         component: () => import("./pages/Albums.vue"),
     },
+    {
+        path: "/info",
+        component: () => import("./pages/Info.vue"),
+    },
 ];
 
 export default createRouter({

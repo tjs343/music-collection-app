@@ -21,13 +21,19 @@
         }
 
         .txt-album-name {
-            font-size: 1.4em;
+            font-size: 1.2em;
             font-weight: 600;
         }
 
         .txt-artist-name {
+            font-size: 1em;
+            color: #CCC;
+            font-weight: 600;
+        }
+
+        .txt-release-year {
             font-size: 0.9em;
-            color: #CCC
+            color: #CCC;
         }
 
         &:hover {
