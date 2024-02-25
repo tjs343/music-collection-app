@@ -4,13 +4,13 @@
       <Header></Header>
       <div class="app-container__page">
         <h1>Albums</h1>
-        
-        
+        <div v-if="isLoading">Loading...</div>
+
         <div class="album-list">
             <router-link v-for="album in albums" :to="generateAlbumURL(album.id)">
                 <SVGIcon name="cd" />
-                {{ album.title }}
-                
+                <p class="txt-album-name">{{ album.title }}</p>
+                <p class="txt-artist-name">{{ album.artist_name }}</p>                
             </router-link>
         </div>
       </div>
@@ -28,7 +28,8 @@ export default {
   data() {
     return {
       pageTitle: 'MP - MCA',
-      albums: [] // Initialize items as an empty array
+      albums: [],
+      isLoading: true
     };
   },
   mounted() {
@@ -46,7 +47,9 @@ export default {
         axios.get('/api/albums')
         .then(response => {
             console.log(response.data);
+
             this.albums = response.data;
+            this.isLoading = false;
         })
         .catch(error => {
             console.error('Error fetching data:', error);

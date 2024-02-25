@@ -1,19 +1,49 @@
 .album-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
-    grid-gap: 20px; /* Adjust the gap between grid items as needed */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-top: 40px;
 
     a {
         display: flex;
         flex-direction: column;
         display: inline-block;
         text-align: center;
-        outline: 1px solid red;
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px;
 
         svg {
             width: 120px;
             height: 120px;
-            margin: 0 auto;
+            margin: 0 auto 20px auto;
+            transition: 0.4s all;
+        }
+
+        .txt-album-name {
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+
+        .txt-artist-name {
+            font-size: 0.9em;
+            color: #CCC
+        }
+
+        &:hover {
+            background-color: #3686FF;
+
+            svg {
+                scale: 1.1;
+
+                path {                    
+                    fill: white;
+                }
+            }
+
+            p {
+                color: white;
+            }
         }
     }
 }

@@ -5,9 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Album;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class AlbumController extends Controller
 {
+    private function getNameById($data, $id) {
+        foreach ($data as $item) {
+
+            if ($item[0]['id'] === $id) {
+
+                return $item[0]['name'];
+            }
+        }
+
+        return null;
+    }
+    
     /**
      * Display a listing of the resource.
      */
@@ -15,12 +28,28 @@ class AlbumController extends Controller
     {
         $albums = Album::all();
 
-        $albums->map(function ($album) {
-            $album->artist_name = 'Your custom value';
+        $client = new Client();
+
+        $headers = [
+            'Authorization' => 'Basic ZGV2ZWxvcGVyOlpHVjJaV3h2Y0dWeQ=='
+        ];
+
+        $endpoint = 'https://europe-west1-madesimplegroup-151616.cloudfunctions.net/artists-api-controller';
+
+        $response = $client->request('GET', $endpoint, [
+            'headers' => $headers
+        ]);
+
+        $data = json_decode($response->getBody()->getContents(), true);
+
+        $albumsWithCustomField = $albums->map(function ($album) use ($data) {
+
+            $album['artist_name'] = $this->getNameById($data['json'], 7);
+
             return $album;
         });
 
-        return $albums;
+        return $albumsWithCustomField;
     }
 
     /**
