@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Album;
+use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\ArtistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +24,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("/test-me", function () {
     return 'Hello from Laravel!!!';
 });
+
+Route::get("/albums", [AlbumController::class, 'index']);
+
+//Route::get("/artist/{id}", [ArtistController::class, 'index']);
+
+Route::get("/artist/{id}", function(){return 'hi';});

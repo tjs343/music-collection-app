@@ -9,6 +9,10 @@ const routes = [
         path: "/artists",
         component: () => import("./pages/Artists.vue"),
     },
+    {
+        path: "/albums",
+        component: () => import("./pages/Albums.vue"),
+    },
 ];
 
 export default createRouter({

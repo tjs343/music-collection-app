@@ -1,0 +1,19 @@
+.album-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
+    grid-gap: 20px; /* Adjust the gap between grid items as needed */
+
+    a {
+        display: flex;
+        flex-direction: column;
+        display: inline-block;
+        text-align: center;
+        outline: 1px solid red;
+
+        svg {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+    }
+}
