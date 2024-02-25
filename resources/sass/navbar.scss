@@ -1,0 +1,19 @@
+.navbar {
+    width: 20%;
+    border-right: 2px solid #F2F3F5;
+    height: 100vh;
+    padding: 70px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .router-link-active {
+        background-color: #3686FF;
+        color: white;
+    }
+}

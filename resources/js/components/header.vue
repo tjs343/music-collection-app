@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>fefwefew</h1>
+    <p>ds</p>
   </header>
 </template>
 
@@ -9,3 +9,7 @@ export default {
 
 };
 </script>
+
+<style lang="scss">
+@import '../../sass/header.scss';
+</style>

@@ -1,14 +1,18 @@
 <template>
-    <Header></Header>
-    <div>
+    <Navbar></Navbar>
+    <div class="app-container__main">
+      <Header></Header>
+      <div class="app-container__page">
         <h1>HOME</h1>
-        <router-link to="/artists"> Take me to Test page </router-link>
+        
         <p>{{ message }}</p>
+      </div>
     </div>
 </template>
 
 <script>
-import Header from '../components/header.vue';
+import Header from '../components/Header.vue';
+import Navbar from '../components/Navbar.vue';
 
 import axios from 'axios';
 
@@ -24,7 +28,8 @@ export default {
     this.fetchData();
   },
   components: {
-    Header
+    Header,
+    Navbar
   },
   methods: {
     fetchData() {
@@ -42,3 +47,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+@import '../../sass/home.scss';
+</style>
