@@ -4,7 +4,7 @@
       <Header></Header>
       <div class="app-container__page">
         <h1>HOME</h1>
-        
+
         <p>{{ message }}</p>
       </div>
     </div>
@@ -13,6 +13,7 @@
 <script>
 import Header from '../components/Header.vue';
 import Navbar from '../components/Navbar.vue';
+
 
 import axios from 'axios';
 
@@ -29,7 +30,7 @@ export default {
   },
   components: {
     Header,
-    Navbar
+    Navbar,
   },
   methods: {
     fetchData() {

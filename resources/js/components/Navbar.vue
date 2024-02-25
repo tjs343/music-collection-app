@@ -1,15 +1,19 @@
 <template>
 
     <nav class="navbar">
-        <router-link to="/"> Home </router-link>
-        <router-link to="/artists"> Artists </router-link>
+        <router-link to="/"><SVGIcon name="dashboard" />Home </router-link>
+        <router-link to="/artists"><SVGIcon name="artists" />Artists </router-link>
+        <router-link to="/artists"><SVGIcon name="albums" />Albums </router-link>
     </nav>
 
 </template>
 
 <script>
+import SVGIcon from '../components/SVGIcon.vue';
 export default {
-
+  components: {
+    SVGIcon
+  },
 };
 </script>
 
