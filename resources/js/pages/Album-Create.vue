@@ -18,6 +18,9 @@
                     <v-text-field v-model="albumData.release_year" label="Release Year"></v-text-field>
                     <v-btn type="submit">Add Album</v-btn>
                 </v-form>
+                      <v-alert v-if="errorMessage" type="error" dismissible>
+        {{ errorMessage }}
+      </v-alert>
                 <v-snackbar
                     v-model="snackbar"
                     >
@@ -55,7 +58,8 @@ export default {
             artist_id: null
         },
         isLoading: true,
-        snackbar: false
+        snackbar: false,
+        errorMessage: ''
     };
   },
   mounted() {
@@ -76,6 +80,7 @@ export default {
         })
         .catch(error => {
             console.error('Error fetching artist information:', error);
+            
         });
     },
     async submitForm() {
@@ -86,6 +91,7 @@ export default {
         })
         .catch(error => {
           console.error('Error creating resource:', error);
+          this.errorMessage = error.response.data.message;
         });
     }
   },
