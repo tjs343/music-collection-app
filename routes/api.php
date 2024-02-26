@@ -32,3 +32,5 @@ Route::get("/albums", [AlbumController::class, 'index']);
 Route::get("/artists", [ArtistController::class, 'index']);
 
 Route::get("/artist/{id}", function(){return 'hi';});
+
+Route::post('/album-create', [AlbumController::class, 'store']);

@@ -26,7 +26,7 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::all();
+        $albums = Album::orderBy('created_at', 'desc')->get();
 
         $client = new Client();
 
@@ -65,7 +65,17 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate request data
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'release_year' => 'required|integer',
+            'artist_id' => 'required|integer',
+        ]);
+
+        // Create the resource
+        $album = Album::create($validatedData);
+
+        return response()->json($album, 201);
     }
 
     /**

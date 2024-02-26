@@ -14,6 +14,10 @@ const routes = [
         component: () => import("./pages/Albums.vue"),
     },
     {
+        path: "/album-create",
+        component: () => import("./pages/Album-Create.vue"),
+    },
+    {
         path: "/info",
         component: () => import("./pages/Info.vue"),
     },
