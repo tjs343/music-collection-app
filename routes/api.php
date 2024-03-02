@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Album;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\StatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("/test-me", function () {
-    return 'Hello from Laravel!!!';
-});
+Route::get("/stats", [StatsController::class, 'appStats']);
 
 Route::get("/albums", [AlbumController::class, 'index']);
 
@@ -34,3 +33,7 @@ Route::get("/artists", [ArtistController::class, 'index']);
 Route::get("/artist/{id}", function(){return 'hi';});
 
 Route::post('/album-create', [AlbumController::class, 'store']);
+
+Route::get('/album-edit/{id}', [AlbumController::class, 'edit']);
+
+Route::put('/album-update/{id}', [AlbumController::class, 'update']);

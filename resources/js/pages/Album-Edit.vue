@@ -18,7 +18,7 @@
                   <span v-if="formErrors.title" class="error">{{ formErrors.title[0] }}</span>
                   <v-text-field v-model="albumData.release_year" label="Release Year"></v-text-field>
                   <span v-if="formErrors.release_year" class="error">{{ formErrors.release_year[0] }}</span>
-                  <v-btn type="submit">Add Album</v-btn>
+                  <v-btn type="submit">Edit Album</v-btn>
               </v-form>
               <v-snackbar
                 v-model="snackbar"
@@ -44,13 +44,13 @@
 import Header from '../components/Header.vue';
 import Navbar from '../components/Navbar.vue';
 import { mcaMixins } from '../mixins.js';
-
 import axios from 'axios';
 
 export default {
+  props: ['id'],
   data() {
     return {
-        pageTitle: 'Add Album',
+        pageTitle: 'Edit Album',
         artists: [],
         albumData: {
             title: '',
@@ -59,10 +59,11 @@ export default {
         },
         isLoading: true,
         snackbar: false,
-        formErrors: {},
+        formErrors: {}
     };
   },
   mounted() {
+    this.fetchAlbum(this.id);
     this.fetchArtists()
       .then(data => {
         this.artists = data;
@@ -74,15 +75,19 @@ export default {
   },
   mixins: [mcaMixins],
   methods: {
+    fetchAlbum(id) {
+        axios.get('/api/album-edit/' + id)
+        .then(response => {
+            this.albumData = response.data;
+        })
+        .catch(error => {
+            console.error('Error fetching artist information:', error);            
+        });
+    },
     async submitForm() {
-        axios.post('/api/album-create', this.albumData)
+        axios.put('/api/album-update/' + this.id, this.albumData)
         .then(response => {
           this.snackbar = true;
-          this.albumData = {
-            title: '',
-            release_year: '',
-            artist_id: null
-          };
           this.formErrors = {};
         })
         .catch(error => {

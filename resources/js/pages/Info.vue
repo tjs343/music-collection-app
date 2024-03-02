@@ -1,9 +1,8 @@
 <template>
     <Navbar></Navbar>
     <div class="app-container__main">
-      <Header></Header>
+      <Header :pagename="pageTitle"></Header>
       <div class="app-container__page">
-        <h1>Info</h1>
         <div class="info-panel">
             <p>This application was built using the PHP framework <a href="https://laravel.com/" target="_blank">Laravel</a> and uses <a href="https://vuejs.org/" target="_blank">Vue.js</a> for handling the front-end.</p>
             <p>Laravel is used to permanently store album information, as well as provide access to the remote Artist Data API using a library called GuzzleHTTP.</p>
@@ -33,7 +32,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      pageTitle: 'MP MCA - Info',
+      pageTitle: 'Info',
     };
   },
   components: {

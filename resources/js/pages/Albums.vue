@@ -1,17 +1,16 @@
 <template>
     <Navbar></Navbar>
     <div class="app-container__main">
-      <Header></Header>
+      <Header :pagename="pageTitle"></Header>
       <div class="app-container__page">
         <div v-if="isLoading" class="loading-spinner"><v-progress-circular color="#3686FF" indeterminate></v-progress-circular></div>
-        <div v-if="!isLoading">
-          <h1>Albums</h1>        
+        <div v-if="!isLoading">       
           <div class="album-list">
               <router-link v-for="album in albums" :to="generateAlbumURL(album.id)">
-                  <SVGIcon name="cd" />
-                  <p class="txt-album-name">{{ album.title }}</p>
-                  <p class="txt-artist-name">{{ album.artist_name }}</p>     
-                  <p class="txt-release-year">{{ album.release_year }}</p>
+                <SVGIcon name="cd" />
+                <p class="txt-album-name">{{ album.title }}</p>
+                <p class="txt-artist-name">{{ album.artist_name }}</p>     
+                <p class="txt-release-year">{{ album.release_year }}</p>
               </router-link>
           </div>
         </div>
@@ -29,15 +28,13 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      pageTitle: 'MP - MCA',
+      pageTitle: 'List of Albums',
       albums: [],
       isLoading: true
     };
   },
   mounted() {
-    // Call fetchData method when the component is mounted
     this.fetchData();
-
   },
   components: {
     Header,
@@ -48,8 +45,6 @@ export default {
     fetchData() {
         axios.get('/api/albums')
         .then(response => {
-            console.log(response.data);
-
             this.albums = response.data;
             this.isLoading = false;
         })
@@ -58,8 +53,7 @@ export default {
         });
     },
     generateAlbumURL(albumID) {
-      // Simple method for generating the album's URL
-      return `/album/${albumID}`;
+      return `/album-edit/${albumID}`;
     }
   }
 };

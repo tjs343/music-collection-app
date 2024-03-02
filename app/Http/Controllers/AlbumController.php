@@ -68,7 +68,7 @@ class AlbumController extends Controller
         // Validate request data
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
-            'release_year' => 'required|integer',
+            'release_year' => 'required|integer|min:1900|max:'.(date('Y')),
             'artist_id' => 'required|integer',
         ]);
 
@@ -89,17 +89,20 @@ class AlbumController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Album $album)
+    public function edit($id)
     {
-        //
+        return Album::findorfail($id);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Album $album)
+    public function update(Request $request, $id)
     {
-        //
+
+        $album = Album::findOrFail($id);
+        $album->update($request->all());
+        return response()->json($album);
     }
 
     /**

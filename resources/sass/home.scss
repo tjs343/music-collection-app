@@ -1,0 +1,15 @@
+.stats-panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    &--grid-item {
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px;
+
+        .value {
+            font-size: 3em;
+            font-weight: 600;
+        }
+    }
+}

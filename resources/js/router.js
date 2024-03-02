@@ -18,6 +18,11 @@ const routes = [
         component: () => import("./pages/Album-Create.vue"),
     },
     {
+        path: "/album-edit/:id",
+        component: () => import("./pages/Album-Edit.vue"),
+        props: true
+    },
+    {
         path: "/info",
         component: () => import("./pages/Info.vue"),
     },

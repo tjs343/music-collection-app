@@ -1,11 +1,14 @@
 <template>
     <Navbar></Navbar>
     <div class="app-container__main">
-      <Header></Header>
+      <Header :pagename="pageTitle"></Header>
       <div class="app-container__page">
-        <h1>HOME</h1>
-
-        <p>{{ message }}</p>
+        <div class="stats-panel">
+        <div class="stats-panel--grid-item">
+          <p class="value">{{ stats.totalAlbums }}</p>
+          <p>Albums Collected!</p>
+        </div>
+        </div>
       </div>
     </div>
 </template>
@@ -14,14 +17,13 @@
 import Header from '../components/Header.vue';
 import Navbar from '../components/Navbar.vue';
 
-
 import axios from 'axios';
 
 export default {
   data() {
     return {
-      pageTitle: 'Page Title',
-      message: '' // Initialize items as an empty array
+      pageTitle: 'Home',
+      stats: {}
     };
   },
   mounted() {
@@ -35,11 +37,11 @@ export default {
   methods: {
     fetchData() {
       // Use Axios to make a GET request to your local API endpoint
-      axios.get('/api/test-me')
+      axios.get('/api/stats')
         .then(response => {
           // Set the items data to the fetched data
           console.log(response.data);
-          this.message = response.data;
+          this.stats = response.data;
         })
         .catch(error => {
           console.error('Error fetching data:', error);
