@@ -37,3 +37,5 @@ Route::post('/album-create', [AlbumController::class, 'store']);
 Route::get('/album-edit/{id}', [AlbumController::class, 'edit']);
 
 Route::put('/album-update/{id}', [AlbumController::class, 'update']);
+
+Route::delete('/album-delete/{id}', [AlbumController::class, 'destroy']);

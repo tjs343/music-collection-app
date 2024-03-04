@@ -20,6 +20,7 @@
                   <span v-if="formErrors.release_year" class="error">{{ formErrors.release_year[0] }}</span>
                   <v-btn type="submit">Edit Album</v-btn>
               </v-form>
+              <v-btn @click="deleteAlbum(albumData.id)" class="btn-delete">Delete album</v-btn>
               <v-snackbar
                 v-model="snackbar"
                 >
@@ -97,6 +98,18 @@ export default {
 
           }
         });
+    },
+    deleteAlbum(itemId) {
+      if(confirm('Are you sure you want to delete this album?')) {
+        axios.delete(`/api/album-delete/${itemId}`)
+          .then(response => {
+            console.log(response.data.message);
+            this.$router.push('/albums');
+          })
+          .catch(error => {
+            console.error('Error deleting item:', error);
+          });
+      }
     }
   },
   components: {

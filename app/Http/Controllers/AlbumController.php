@@ -108,8 +108,11 @@ class AlbumController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Album $album)
+    public function destroy($id)
     {
-        //
+        $album = Album::findOrFail($id);
+        $album->delete();
+    
+        return response()->json(['message' => 'Album deleted successfully']);
     }
 }
