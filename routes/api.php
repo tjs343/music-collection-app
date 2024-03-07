@@ -18,19 +18,8 @@ use App\Http\Controllers\StatsController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::get("/stats", [StatsController::class, 'appStats']);
-
+// Albun Routes
 Route::get("/albums", [AlbumController::class, 'index']);
-
-//Route::get("/artist/{id}", [ArtistController::class, 'index']);
-
-Route::get("/artists", [ArtistController::class, 'index']);
-
-Route::get("/artist/{id}", function(){return 'hi';});
 
 Route::post('/album-create', [AlbumController::class, 'store']);
 
@@ -39,3 +28,6 @@ Route::get('/album-edit/{id}', [AlbumController::class, 'edit']);
 Route::put('/album-update/{id}', [AlbumController::class, 'update']);
 
 Route::delete('/album-delete/{id}', [AlbumController::class, 'destroy']);
+
+// Artist Route
+Route::get("/artists", [ArtistController::class, 'index']);

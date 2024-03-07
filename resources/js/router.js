@@ -21,11 +21,7 @@ const routes = [
         path: "/album-edit/:id",
         component: () => import("./pages/Album-Edit.vue"),
         props: true
-    },
-    {
-        path: "/info",
-        component: () => import("./pages/Info.vue"),
-    },
+    }
 ];
 
 export default createRouter({

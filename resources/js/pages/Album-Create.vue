@@ -89,7 +89,7 @@ export default {
           if (error.response.status === 422) {
             this.formErrors = error.response.data.errors;
           } else {
-
+            console.error('Error creating album:', error);
           }
         });
     }
@@ -100,7 +100,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-@import '../../sass/info.scss';
-</style>

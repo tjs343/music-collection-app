@@ -71,7 +71,7 @@ export default {
         this.isLoading = false;
       })
       .catch(error => {
-        // Handle error
+          console.error('Error fetching artist information:', error); 
       });
   },
   mixins: [mcaMixins],
@@ -82,7 +82,7 @@ export default {
             this.albumData = response.data;
         })
         .catch(error => {
-            console.error('Error fetching artist information:', error);            
+            console.error('Error fetching album information:', error);            
         });
     },
     async submitForm() {
@@ -95,7 +95,7 @@ export default {
           if (error.response.status === 422) {
             this.formErrors = error.response.data.errors;
           } else {
-
+            console.error('Error updating album:', error);
           }
         });
     },
@@ -103,11 +103,10 @@ export default {
       if(confirm('Are you sure you want to delete this album?')) {
         axios.delete(`/api/album-delete/${itemId}`)
           .then(response => {
-            console.log(response.data.message);
             this.$router.push('/albums');
           })
           .catch(error => {
-            console.error('Error deleting item:', error);
+            console.error('Error deleting album:', error);
           });
       }
     }

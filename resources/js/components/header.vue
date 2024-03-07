@@ -13,9 +13,8 @@ export default {
     },
   },
 };
-
 </script>
 
 <style lang="scss">
-@import '../../sass/header.scss';
+@import "../../sass/header.scss";
 </style>

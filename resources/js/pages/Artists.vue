@@ -42,7 +42,7 @@ export default {
         this.isLoading = false;
       })
       .catch(error => {
-        // Handle error
+        console.error('Error fetching artists:', error); 
       });
   },
   components: {

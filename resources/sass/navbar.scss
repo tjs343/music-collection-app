@@ -28,18 +28,20 @@
         &:hover {
             background-color: rgba(#3686FF, 0.1);
         }
-
-        &:last-child {
-            margin-top: auto;
-        }
     }
 
     .router-link-active {
         background-color: #3686FF;
         color: white;
 
+        svg {
+            background-color: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
         path {
-            stroke: white;
+            stroke: #3686FF;
             fill: #3686FF;
         }
 

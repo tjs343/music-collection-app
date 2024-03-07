@@ -1,15 +1,31 @@
-.stats-panel {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+.info-panel {
+    background-color: white;
+    padding: 20px;
 
-    &--grid-item {
-        background-color: white;
-        padding: 20px;
-        border-radius: 20px;
+    p {
+        margin-bottom: 10px;
+        font-size: 0.9em;
 
-        .value {
-            font-size: 3em;
-            font-weight: 600;
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    a {
+        text-decoration: underline;
+        color: #3686FF;
+    }
+
+    hr {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+
+        li {
+            font-size: 0.9em;
         }
     }
 }

@@ -49,7 +49,7 @@ export default {
             this.isLoading = false;
         })
         .catch(error => {
-            console.error('Error fetching data:', error);
+            console.error('Error fetching album data:', error);
         });
     },
     generateAlbumURL(albumID) {
