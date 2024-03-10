@@ -24,7 +24,7 @@
               <v-snackbar
                 v-model="snackbar"
                 >
-                Album has been saved! :)
+                Album has been edited! :)
 
                 <template v-slot:actions>
                     <v-btn
@@ -117,7 +117,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-@import '../../sass/info.scss';
-</style>
