@@ -1,0 +1,232 @@
+{
+  "_Navbar-!~{008}~.js": {
+    "file": "assets/Navbar-BwEQ7hjs.css",
+    "src": "_Navbar-!~{008}~.js"
+  },
+  "_Navbar-C-QiNICq.js": {
+    "file": "assets/Navbar-C-QiNICq.js",
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "dynamicImports": [
+      "public/icons/about.svg",
+      "public/icons/add.svg",
+      "public/icons/albums.svg",
+      "public/icons/artist.svg",
+      "public/icons/artists.svg",
+      "public/icons/cd.svg",
+      "public/icons/check-svgrepo-com.svg",
+      "public/icons/code.svg",
+      "public/icons/comments-3-svgrepo-com.svg",
+      "public/icons/dashboard.svg",
+      "public/icons/headphone-svgrepo-com.svg",
+      "public/icons/music-list.svg",
+      "public/icons/music-note.svg",
+      "public/icons/notepad.svg",
+      "public/icons/twitter-logo.svg"
+    ],
+    "css": [
+      "assets/Navbar-BwEQ7hjs.css"
+    ]
+  },
+  "_mixins-CNIKFpNw.js": {
+    "file": "assets/mixins-CNIKFpNw.js"
+  },
+  "public/icons/about.svg": {
+    "file": "assets/about-GtbuVjoA.js",
+    "src": "public/icons/about.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/add.svg": {
+    "file": "assets/add-Df0vh3Lk.js",
+    "src": "public/icons/add.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/albums.svg": {
+    "file": "assets/albums-DG4UH4Cm.js",
+    "src": "public/icons/albums.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/artist.svg": {
+    "file": "assets/artist-CoUBvajm.js",
+    "src": "public/icons/artist.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/artists.svg": {
+    "file": "assets/artists-Dcu0tVgd.js",
+    "src": "public/icons/artists.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/cd.svg": {
+    "file": "assets/cd-Cxh9Hf7S.js",
+    "src": "public/icons/cd.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/check-svgrepo-com.svg": {
+    "file": "assets/check-svgrepo-com-BiGlPiQC.js",
+    "src": "public/icons/check-svgrepo-com.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/code.svg": {
+    "file": "assets/code-DE-tIYko.js",
+    "src": "public/icons/code.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/comments-3-svgrepo-com.svg": {
+    "file": "assets/comments-3-svgrepo-com-7GRfDysU.js",
+    "src": "public/icons/comments-3-svgrepo-com.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/dashboard.svg": {
+    "file": "assets/dashboard-a9t2kezn.js",
+    "src": "public/icons/dashboard.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/headphone-svgrepo-com.svg": {
+    "file": "assets/headphone-svgrepo-com-BseuRK6x.js",
+    "src": "public/icons/headphone-svgrepo-com.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/music-list.svg": {
+    "file": "assets/music-list-CA8pw1zv.js",
+    "src": "public/icons/music-list.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/music-note.svg": {
+    "file": "assets/music-note-ChJl8yw4.js",
+    "src": "public/icons/music-note.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/notepad.svg": {
+    "file": "assets/notepad-DoH4rypN.js",
+    "src": "public/icons/notepad.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "public/icons/twitter-logo.svg": {
+    "file": "assets/twitter-logo-sgNrL4rg.js",
+    "src": "public/icons/twitter-logo.svg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-C61jTV-o.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/pages/Home.vue",
+      "resources/js/pages/Artists.vue",
+      "resources/js/pages/Albums.vue",
+      "resources/js/pages/Album-Create.vue",
+      "resources/js/pages/Album-Edit.vue"
+    ],
+    "css": [
+      "assets/app-BPQ9BNvj.css"
+    ]
+  },
+  "resources/js/pages/Album-Create.vue": {
+    "file": "assets/Album-Create-B34PJf-A.js",
+    "src": "resources/js/pages/Album-Create.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Navbar-C-QiNICq.js",
+      "_mixins-CNIKFpNw.js",
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/Album-Edit.vue": {
+    "file": "assets/Album-Edit-BNezzDVz.js",
+    "src": "resources/js/pages/Album-Edit.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Navbar-C-QiNICq.js",
+      "_mixins-CNIKFpNw.js",
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/Albums.vue": {
+    "file": "assets/Albums-DppZ2Ug6.js",
+    "src": "resources/js/pages/Albums.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Navbar-C-QiNICq.js",
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Albums-C2jRho6F.css"
+    ]
+  },
+  "resources/js/pages/Artists.vue": {
+    "file": "assets/Artists-KiIQat7Y.js",
+    "src": "resources/js/pages/Artists.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Navbar-C-QiNICq.js",
+      "_mixins-CNIKFpNw.js",
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Artists-BtNhoH06.css"
+    ]
+  },
+  "resources/js/pages/Home.vue": {
+    "file": "assets/Home-6XGwaJbG.js",
+    "src": "resources/js/pages/Home.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Navbar-C-QiNICq.js",
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Home-BiFQP4cY.css"
+    ]
+  },
+  "resources/sass/styles.scss": {
+    "file": "assets/styles-BpzDhXQA.css",
+    "src": "resources/sass/styles.scss",
+    "isEntry": true
+  }
+}

@@ -1,0 +1,1 @@
+const s={methods:{async fetchArtists(){try{const t=await axios.get("/api/artists"),r=[];for(let a=0;a<t.data.length;a++)r.push({id:t.data[a][0].id,name:t.data[a][0].name,twitter:t.data[a][0].twitter});return r}catch(t){throw console.error("Error fetching data:",t),t}}}};export{s as m};
